@@ -13,12 +13,12 @@ int main(int argc, char const *argv[])
 	/* code */
 	pthread_t tid;
 	pthread_create(&tid, NULL, increament, NULL);
-
+	pthread_join(tid, NULL);
+	
 	printf("Parent thread. ");
 	for (; varp<=100;varp++)
 		printf("%d\n", varp);
-
-	pthread_join(tid, NULL);
+	
 	return 0;
 }
 
