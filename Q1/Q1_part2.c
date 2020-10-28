@@ -15,10 +15,10 @@ int main(int argc, char const *argv[])
 	pthread_create(&tid, NULL, increament, NULL);
 	pthread_join(tid, NULL);
 	
-	printf("Parent thread. ");
-	for (; varp<=100;varp++)
-		printf("%d\n", varp);
-	
+	printf("Parent thread. \n"); ++varp;
+	for (; varp<=100; varp++)
+		printf("Parent %d\n", varp);
+
 	return 0;
 }
 
@@ -27,6 +27,6 @@ void *increament(void *vargp)
 	printf("%s\n", "Child thread");
 	for (;varp>=-90;varp--)
 	{
-		printf("%d\n",varp );
+		printf("Child %d\n",varp );
 	}
 }
